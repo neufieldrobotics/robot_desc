@@ -1,0 +1,13 @@
+<launch>
+    <arg name="output" default="screen"/>
+    <arg name="lidar_frame" default="lidar" doc="the name of the lidar frame" /> 
+    <arg name="cam_frame" default="cam" doc="name of the camera frame" />
+    
+     <node pkg="robot_desc" name="" type="robot_static_tf_publisher" output="$(arg output)" >
+         <param name="lidar_frame"     value="$(arg lidar_frame)" />
+         <param name="cam_frame"     value="$(arg cam_frame)" />
+     </node>
+    
+    <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="my_rqt_reconfigure" />
+    
+</launch>
